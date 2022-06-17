@@ -1,8 +1,3 @@
-﻿/* ***************************************************************
-* AzureDevOps Monitoring Application
-* © 2022, CCH Incorporated.  All rights reserved.
-* Author: Vivek Singh
-*****************************************************************/
 using System;
 using System.Collections.Generic;
 using System.Linq;
