@@ -1,0 +1,14 @@
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\LogExtractorAndHtmlLauncher.exe.config
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\LogExtractorAndHtmlLauncher.exe
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\LogExtractorAndHtmlLauncher.pdb
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\obj\Debug\LogExtractorAndHtmlLauncher.csproj.CoreCompileInputs.cache
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\obj\Debug\LogExtractorAndHtmlLauncher.exe
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\obj\Debug\LogExtractorAndHtmlLauncher.pdb
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\HtmlAgilityPack.dll
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\Newtonsoft.Json.dll
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\HtmlAgilityPack.xml
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\Newtonsoft.Json.xml
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\obj\Debug\LogExtractorAndHtmlLauncher.csproj.CopyComplete
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\bin\Debug\StackedColumnChart.html
+C:\Users\vsingh\Source\Repos\LogExtractorAndHtmlLauncher\LogExtractorAndHtmlLauncher\obj\Debug\LogExtractorAndHtmlLauncher.csproj.AssemblyReference.cache

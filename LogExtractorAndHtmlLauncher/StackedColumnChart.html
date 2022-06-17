@@ -1,0 +1,186 @@
+﻿<html>
+<head>
+    <title>AzureDevOps Monitoring Application</title>
+    <link rel="icon" type="image/png" href="https://icons.iconarchive.com/icons/martz90/circle/256/plex-icon.png" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        tr > th::first-line {
+            font-size: 1.5em;
+            font-weight: bolder;
+            text-decoration: underline;
+        }
+    </style>
+    <script type="text/javascript">
+        google.charts.load("current", {
+            packages: ["corechart"]
+        }).then(function () {
+            $.ajax({
+                type: "GET",
+                url: "https://adomonitoringwebsite.blob.core.windows.net/newcontainer/TestExecutionResult.json",
+                dataType: "json",
+            }).done(function (jsonData) {
+
+                var dateTime = new Date();
+                var time = dateTime.getHours() + ":" + dateTime.getMinutes();
+                var columns = ['Test Execution'], row = [time];
+
+                $.each(jsonData, function (key, value) {
+                    columns.push(key);
+                    row.push(value);
+                });
+
+                var data = google.visualization.arrayToDataTable([
+                    columns,
+                    row,
+                ]);
+
+                var options = {
+                    title: 'AzureDevOps Monitoring Application',
+                    isStacked: true,
+                    legend: { position: 'bottom', maxLines: 3, textStyle: { fontSize: 10 } },
+                    bar: { groupWidth: "50%" },
+                    hAxis: {
+                        format: 'HH:mm', gridlines: { count: 50 },
+                        slantedText: false, slantedTextAngle: 45, textStyle: { fontSize: 11 }
+                    },
+                    vAxis: {
+                        title: 'Total execution time (seconds)',
+                        viewWindow: {
+                            max: 80,
+                            min: 0
+                        }
+                    },
+                    series:
+                    {
+                        0: { color: '#11a7f7' },
+                        1: { color: '#f9961c' },
+                        2: { color: '#ae00ff' },
+                        3: { color: '#085680' },
+                        4: { color: '#7aeb34' },
+                        5: { color: '#030747' },
+                        6: { color: '#eef527' },
+                        7: { color: 'darkgray' }
+                    }
+                };
+
+                var chart = new google.visualization.ColumnChart(document.getElementById('barchart'));
+                chart.draw(data, options);
+            }).fail(function (jqXHR, status, errorThrown) {
+                console.log(jqXHR, status, errorThrown)
+                // add fail callback
+                alert('error: ' + errorThrown);
+            });
+        });
+    </script>
+
+    
+    <style>
+        ul.breadcrumb {
+            padding: 10px 10px;
+            list-style: none;
+            background-color: #eee;
+            /*background-color: #FFFFFF*/
+        }
+
+
+
+            ul.breadcrumb li {
+                display: inline;
+                font-size: 12px;
+            }
+
+                ul.breadcrumb li:nth-child(1) + li:before {
+                    padding: 8px;
+                    color: black;
+                    content: "|\00a0";
+                }
+
+                ul.breadcrumb li:nth-child(2) + li:before {
+                    padding: 8px;
+                    color: rgb(110, 107, 107);
+                    content: "|\00a0";
+                }
+
+                ul.breadcrumb li a {
+                    color: #0275d8;
+                    text-decoration: none;
+                }
+
+            ul.breadcrumb li {
+                color: #0275d8;
+                text-decoration: none;
+            }
+
+                ul.breadcrumb li a:hover {
+                    color: #01447e;
+                    text-decoration: underline;
+                }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            right: 0;
+            /*background-color: #f9f9f9;*/
+            background-color: red;
+            min-width: 150px;
+            z-index: 1;
+            background: none;
+        }
+
+            .dropdown-content a {
+                color: black;
+                padding: 10px 10px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #eee;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <td>
+                <ul class="breadcrumb">
+                    <li>
+                        <u><a href="https://adomonitoringwebsite.blob.core.windows.net/newcontainer/ExtentLog.zip">Logs</a></u>
+                    </li>
+                    <li>
+                        <u><a id="Release link" href="https://dev.azure.com/VivekSingh0781/Team%20Foundation%20Version%20Control%20-%20TFVC/_release?_a=releases&view=mine&definitionId=1" target="_blank">Release Link</a></u>
+                    </li>
+                </ul>
+                <div id="LastSuccessfulRun" style="font-size:12px;color:green;margin-top: -15px;margin-bottom: 10px;padding-left: 5px;"></div>
+                <script>
+                    console.log("Inside Date Time Function");
+                    var todaySpan = new Date();
+                    var dateSpan = todaySpan.getFullYear() + '-' + (todaySpan.getMonth() + 1) + '-' + todaySpan.getDate();
+                    console.log(dateSpan);
+                    var timeSpan = todaySpan.getHours() + ":" + todaySpan.getMinutes() + ":" + todaySpan.getSeconds();
+                    console.log(timeSpan);
+                    var dateTimeSpan = dateSpan + ' ' + timeSpan;
+                    console.log(dateTimeSpan);
+                    document.getElementById("LastSuccessfulRun").innerHTML = "Last successful run at: " + dateTimeSpan;
+                </script>
+
+                <div id="barchart" style="width: 1000px; height: 600px"></div>
+            </td>
+    </table>
+</body>
+</html>
